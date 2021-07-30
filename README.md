@@ -163,7 +163,7 @@ heroku login
 Sobre la carpeta de nuestro proyecto ejecutamos el siguiente comando para inicializar Heroku en nuestro proyecto
 
 ```
-heroku crete
+heroku create
 ```
 
 Luego necesitamos configurar nuestra API Key como variable de entorno de nuestro proyecto  

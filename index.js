@@ -1,6 +1,6 @@
 const { Telegraf } = require("telegraf");
 const fetch = require("node-fetch");
-const bot = new Telegraf("1812373471:AAF6qkN-J9TMJsTmvWyn2Y4U1H2wwPrj1gU");
+const bot = new Telegraf(process.env.TELEGRAM_TOKEN);
 
 //DOSG API
 const API_URL2 = "https://dog.ceo/api/breeds/list/all";
