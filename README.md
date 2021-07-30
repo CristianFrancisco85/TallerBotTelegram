@@ -183,7 +183,7 @@ git push heroku main
 **LISTO**  
 Ya puedes utilizar tu Bot en Telegram  
 
-Cualquier cambio que hagas cobre el codigo y quieras agregar solo ejecuta el comando
+Cualquier cambio que hagas cobre el codigo y quieras agregar solo has commit de todos tus cambios luego ejecuta el comando
 ```
 git push heroku main
 ```
