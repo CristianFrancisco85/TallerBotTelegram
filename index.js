@@ -15,6 +15,7 @@ fetch(API_URL2)
     // console.log(razas);
   });
 
+
 bot.start((ctx) => {
   ctx.reply(
     `${ctx.from.first_name} ${ctx.from.last_name}, bienvenido a tu tienda de perros favorita :)`
@@ -97,6 +98,8 @@ bot.on("sticker", (ctx) => {
   ctx.reply("OH! te gustan los stickers");
 });
 
+
+
 bot.launch(); //para iniciar el bot
 
 function getConfirmation() {
@@ -108,3 +111,4 @@ function getConfirmation() {
   });
 
 }
+
