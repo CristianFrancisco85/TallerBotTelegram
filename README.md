@@ -3,16 +3,16 @@
 ## Herramientas
 - NPM
 - NodeJS
-- Vercel
+- Heroku
 - BotFather
 - Telegraf
 
 ## Configuracion de Entorno
 
-### Instalar Vercel
-Se necesita instalar verce para poder hacer deploy de nuestro web
+### Instalar Heroku
+Se necesita instalar Heroku para poder hacer deploy 
 ```
-npm install -g vercel
+https://devcenter.heroku.com/articles/heroku-cli#download-and-install
 ```
 
 ### Inicializacion de Carpeta
@@ -152,46 +152,32 @@ function getConfirmation() {
 
 ```
 
-## Deploy con Vercel  
+## Deploy con Heroku  
 
-Si es tu primera vez usando Vercel necesitas logearte en la linea de comandos con 
-
-```
-vercel login
-```
-
-Sobre la carpeta de nuestro proyecto ejecutamos el siguiente comando y aceptamos la configuracion recomendada
+Si es tu primera vez usando Heroku necesitas logearte en la linea de comandos con 
 
 ```
-vercel --prod
+heroku login
+```
+
+Sobre la carpeta de nuestro proyecto ejecutamos el siguiente comando para inicializar Heroku en nuestro proyecto
+
+```
+heroku crete
 ```
 
 Luego necesitamos configurar nuestra API Key como variable de entorno de nuestro proyecto  
-Para eso nos podemos dirigir a la pagina Web de Vercel loguearnos y entrar a nuestro proyecto
+Para eso nos podemos dirigir a la pagina Web de Heroku loguearnos y entrar a nuestro proyecto
 
-Posteriormente entramos a Settings->Enviroment Variables
+Posteriormente entramos a Settings->Config Vars
 
 Y agregamos una variabla llamada **TELEGRAM_TOKEN** y como valor colocamos la API Key que nos proporciono Telegram  
 Es importante decir que **NUNCA** compartas esta API Key
 
-Como ultimo paso necesitamos decirle a Telegram la direccion del WebHook que usara nuestro bot  
-Para eso desde nuestro navegador o Postman realizamos una peticion GET con el siguiente formato
+
+Para hacer deploy de nuestra API ejecutamos en siguiente comando
 ```
-https://api.telegram.org/bot{APIKEY}/setWebhook?url={DominioVercel}/api/webhook
-```
-
-Recuerda cambiar:
-- **{APIKEY}** por tu propia API Key
-- **{DominioVercel}** por la URL que te brinda Vercel lo puedes encontrar en Settings->Domain
-
-Si la peticion se ejecuta exitosamente deberias obtener una respuesta similar a esta 
-
-```JSON
-{
-    "ok": true,
-    "result": true,
-    "description": "Webhook was set"
-}
+git push heroku main
 ```
 
 **LISTO**  
@@ -199,6 +185,6 @@ Ya puedes utilizar tu Bot en Telegram
 
 Cualquier cambio que hagas cobre el codigo y quieras agregar solo ejecuta el comando
 ```
-vercel --prod
+git push heroku main
 ```
 
